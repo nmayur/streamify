@@ -42,7 +42,7 @@ const RevenueData = ({
 
   const insightPayload = {
     type: "revenue",
-    label: "Revenue Insigts",
+    label: "Revenue Insights",
     desc: "Here are some tailored insights based on the user revenue data.",
     prompt: `${JSON.stringify(chartData)} ${revenuePrompt}`,
   };

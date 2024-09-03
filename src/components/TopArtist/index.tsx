@@ -20,6 +20,7 @@ const TopArtist = ({
           alt={keyMetrics.topArtist}
           fill
           className="w-full h-full object-cover"
+          priority
         />
 
         <div className="px-4 pb-4 pt-16 mt-2 absolute text-white w-full left-0 z-10 bottom-0 bg-gradient-to-t from-blue-950">

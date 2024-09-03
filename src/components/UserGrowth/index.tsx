@@ -39,7 +39,7 @@ const UserGrowth = ({
 
   const insightPayload = {
     type: "userGrowth",
-    label: "User Growth Insigts",
+    label: "User Growth Insights",
     desc: "Here are some tailored insights based on the user growth data.",
     prompt: `${JSON.stringify(userGrowth)} ${userGrowthPrompt}`,
   }
