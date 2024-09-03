@@ -106,7 +106,7 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
           placeholder="Filter by artist or song name..."
           value={globalFilter}
           onChange={(event) => handleFilterChange(event.target.value)}
-          className="md:max-w-sm w-full bg-slate-950 rounded-md px-4 py-[0.5rem] md:mr-3 md:ml-1 mb-2 text-sm text-white"
+          className="md:max-w-sm w-full bg-slate-950 rounded-md px-4 py-[0.5rem] md:mr-3 md:ml-1 md:mb-0 mb-2 text-sm text-white"
         />
 
         {table.getColumn("artist") && (
