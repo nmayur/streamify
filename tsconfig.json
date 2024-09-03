@@ -1,0 +1,61 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@components": [
+        "./src/components"
+      ],
+      "@utils": [
+        "./src/shared/utils"
+      ],
+      "@types": [
+        "./src/shared/types"
+      ],
+      "@constants": [
+        "./src/shared/constants"
+      ],
+    },
+    "types": [
+      "jest",
+      "@testing-library/jest-dom"
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "jest.setup.ts",
+    "**/*.test.ts",
+    "**/*.test.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
