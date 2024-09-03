@@ -17,7 +17,7 @@ study this graph data of user growth, generate some insights. I want to show it 
 - active user trends. keep it concise. 
 - Percentage User growth
 and more
-Give me title for each insight. and give response in this format [{title: string, description: string}]
+Give a proper title for each insight. and give response in this format [{title: string, description: string}]
 Only give me output in stringified JSON format
 `;
 
@@ -26,6 +26,6 @@ study this graph data of revenue, generate some insights. I want to show it as a
 - where is the most revenuew being generate, 
 - what next active steps shall we take to increase revenue.
 and more
-Give me title for each insight. and give response in this format [{title: string, description: string}]
+Give a proper title for each insight. and give response in this format [{title: string, description: string}]
 Only give me output in stringified JSON format
 `;

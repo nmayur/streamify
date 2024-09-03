@@ -1,4 +1,3 @@
-import { ScrollArea } from "@radix-ui/react-scroll-area";
 import BlurFade from "../magicui/blur-fade";
 import {
   Sheet,
@@ -10,6 +9,7 @@ import {
 import { Dispatch, SetStateAction } from "react";
 import Loader from "../loader";
 import { TriangleAlert } from "lucide-react";
+import { ScrollArea } from "../ui/scroll-area";
 
 interface InsightsSheetProps {
   openInsights: boolean;
@@ -27,7 +27,7 @@ const InsightsSheet = ({
   error,
 }: InsightsSheetProps) => {
   return (
-    <Sheet open={openInsights} onOpenChange={setOpenInsights}>
+    <Sheet open={openInsights} onOpenChange={setOpenInsights} modal={true}>
       <SheetContent className="insigtsBg rounded-none border-0 text-white">
         {error ? (
           <>
@@ -51,8 +51,8 @@ const InsightsSheet = ({
               </SheetHeader>
               <div className="my-8 w-full h-[1px] bg-gray-500"></div>
               {insights?.insights && (
-                <BlurFade delay={0.2} className="mt-5">
-                  <ScrollArea className="h-[70vh]">
+                <BlurFade delay={0.2} className="mt-5 relative">
+                  <ScrollArea className="h-[70vh] pr-4">
                     {insights?.insights?.map((each: any, i: any) => (
                       <div
                         key={i}
