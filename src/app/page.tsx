@@ -42,6 +42,7 @@ export default function Home() {
   const [openInsights, setOpenInsights] = useState<boolean>(false);
   const [insights, setInsights] = useState<any | null>(null);
   const [insightsLoading, setInsightsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
 
   // Cache states for insights
   const [cachedInsights, setCachedInsights] = useState<Record<string, any>>({});
@@ -73,6 +74,7 @@ export default function Home() {
     async (data: InsightsPayload) => {
       setInsightsLoading(true);
       setOpenInsights(true);
+      setError(null);
 
       // Check if insights already exist in the cache
       if (cachedInsights[data.type]) {
@@ -85,6 +87,12 @@ export default function Home() {
       }
 
       const aiInsights = await fetchAIInsights(data);
+      setInsightsLoading(false);
+
+      if (aiInsights.error) {
+        setError("Something Went Wrong!!");
+        return;
+      }
 
       if (aiInsights) {
         const newInsight = { ...data, insights: aiInsights };
@@ -93,8 +101,6 @@ export default function Home() {
       } else {
         setInsights(null);
       }
-
-      setInsightsLoading(false);
     },
     [cachedInsights]
   );
@@ -166,6 +172,7 @@ export default function Home() {
           openInsights={openInsights}
           setOpenInsights={setOpenInsights}
           insights={insights}
+          error={error}
           insightsLoading={insightsLoading}
         />
       </ScrollArea>

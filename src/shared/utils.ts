@@ -33,10 +33,9 @@ export const generateChartData = (
       label,
       users,
       fill: PIE_CHART_COLORS[i], // Assign a random color
-    }
+    };
   });
 };
-
 
 // Open AI API Call
 export const fetchAIInsights = async (data: any): Promise<any> => {
@@ -69,6 +68,6 @@ export const fetchAIInsights = async (data: any): Promise<any> => {
     return JSON.parse(resData.content);
   } catch (error) {
     console.error("Something went wrong:", error);
-    return null;
+    return { error: true, message: error };
   }
 };
