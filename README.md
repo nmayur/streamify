@@ -51,6 +51,12 @@ But I'm aware and know how to implement Redux and Redux Toolkit.
 
 ## Getting Started
 
+***Note*** : You will need an opneAI api to run this project on local. Once you have created the API key create a **.env** file in the root directory and add the key as follows
+
+```bash
+NEXT_PUBLIC_OPENAI_KEY=<openAI API KEY>
+```
+
 Install all the dependencies:
 
 ```bash
