@@ -101,12 +101,12 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
 
   return (
     <div className="overflow-hidden">
-      <div className="flex items-center py-4">
+      <div className="flex flex-wrap items-center py-4">
         <input
           placeholder="Filter by artist or song name..."
           value={globalFilter}
           onChange={(event) => handleFilterChange(event.target.value)}
-          className="max-w-sm bg-slate-950 rounded-md px-4 py-[0.5rem] mr-3 ml-1 text-sm text-white"
+          className="md:max-w-sm w-full bg-slate-950 rounded-md px-4 py-[0.5rem] md:mr-3 md:ml-1 mb-2 text-sm text-white"
         />
 
         {table.getColumn("artist") && (
