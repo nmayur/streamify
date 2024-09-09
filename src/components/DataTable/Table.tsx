@@ -283,7 +283,7 @@ export function DataTable<TData, TValue>({
         </div>
       </div>
 
-      <ScrollArea className="w-[calc(100vw-3rem)] lg:w-auto whitespace-nowrap pb-4">
+      <ScrollArea className="w-[calc(100vw-300px-3.5rem)] whitespace-nowrap pb-4">
         <div className="rounded-md border border-slate-700 overflow-x-auto">
           <Table data-testid="table" className="min-h-[330px]">
             <TableHeader className="bg-slate-900">
