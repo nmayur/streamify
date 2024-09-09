@@ -198,8 +198,8 @@ export function DataTable<TData, TValue>({
         </div>
 
         <div className="flex flex-wrap items-center mt-4 md:mt-0 border-t border-t-slate-700 pt-3 lg:border-0 lg:pt-0">
-          <div className="mr-3">
-            <RadioGroup defaultValue="option-all" className="flex gap-3">
+          <div className="mr-3 mb-3 md:mb-0">
+            <RadioGroup defaultValue="option-all" className="flex gap-3 md:gap-4 text-xs md:text-sm whitespace-nowrap">
               <div className="flex items-center space-x-2">
                 <RadioGroupItem
                   value="option-all"
