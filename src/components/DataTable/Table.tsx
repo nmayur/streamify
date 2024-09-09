@@ -175,7 +175,7 @@ export function DataTable<TData, TValue>({
             placeholder="Filter by artist or song name..."
             value={globalFilter}
             onChange={(event) => handleFilterChange(event.target.value)}
-            className="md:max-w-sm w-full bg-slate-950 rounded-md px-4 py-[0.5rem] md:mr-3 md:ml-1 md:mb-0 mb-2 text-sm text-white"
+            className="md:max-w-sm w-full bg-slate-950 rounded-md px-4 py-[0.5rem] md:mr-3 md:ml-1 md:mb-0 mb-2 text-sm text-white flex-shrink-0"
           />
 
           {table.getColumn("artist") && (
@@ -192,7 +192,7 @@ export function DataTable<TData, TValue>({
               onClick={() => table.resetColumnFilters()}
               className="h-8 px-2 lg:px-3 hover:bg-slate-950 hover:text-white"
             >
-              <CircleX className="h-4 w-4" />
+              <CircleX className="h-4 w-4 mr-2" /> Clear
             </Button>
           )}
         </div>
@@ -285,7 +285,7 @@ export function DataTable<TData, TValue>({
 
       <ScrollArea className="w-[calc(100vw-3rem)] lg:w-auto whitespace-nowrap pb-4">
         <div className="rounded-md border border-slate-700 overflow-x-auto">
-          <Table data-testid="table">
+          <Table data-testid="table" className="min-h-[330px]">
             <TableHeader className="bg-slate-900">
               {table.getHeaderGroups().map((headerGroup) => (
                 <TableRow
@@ -308,7 +308,7 @@ export function DataTable<TData, TValue>({
                 </TableRow>
               ))}
             </TableHeader>
-            <TableBody>
+            <TableBody className="min-h-[300px]">
               {table.getRowModel().rows?.length ? (
                 table.getRowModel().rows.map((row) => (
                   <TableRow
@@ -318,7 +318,7 @@ export function DataTable<TData, TValue>({
                     className="hover:bg-transparent border-slate-600"
                   >
                     {row.getVisibleCells().map((cell) => (
-                      <TableCell key={cell.id}>
+                      <TableCell key={cell.id} className=" align-baseline">
                         {flexRender(
                           cell.column.columnDef.cell,
                           cell.getContext()

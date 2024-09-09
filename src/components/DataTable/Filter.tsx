@@ -62,11 +62,11 @@ export function Filter<TData, TValue>({
           Filter by {title}
           {selectedValues.size > 0 && (
             <>
-              <Separator orientation="vertical" className="mx-2 h-4" />
+              {/* <Separator orientation="vertical" className="mx-2 h-4" /> */}
               <Badge variant="secondary" className="rounded-sm px-1 font-normal lg:hidden">
                 {selectedValues.size}
               </Badge>
-              <div className="hidden space-x-1 lg:flex">
+              {/* <div className="hidden space-x-1 lg:flex">
                 {selectedValues.size > 2 ? (
                   <Badge
                     variant="secondary"
@@ -85,7 +85,7 @@ export function Filter<TData, TValue>({
                     </Badge>
                   ))
                 )}
-              </div>
+              </div> */}
             </>
           )}
         </button>

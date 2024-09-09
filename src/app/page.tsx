@@ -112,70 +112,76 @@ export default function Home() {
 
   return (
     <>
-      <ScrollArea className="min-h-screen h-[100vh] w-full bg-primary-gradient px-2 md:px-3 py-2">
-        <div className="lg:container">
-          {metrics ? (
-            <>
-              <Header />
-              <BlurFade
-                delay={BLUR_FADE_DELAY}
-                className="flex flex-wrap gap-x-2 gap-y-3 mb-5 justify-between"
-              >
-                <>
-                  <TopArtist
-                    keyMetrics={metrics.keyMetrics}
-                    className="w-full h-[300px] md:h-auto md:w-[30%] lg:w-[20%]"
-                  />
-                  <KeyMetrics
-                    metrics={metrics}
-                    className="w-full md:w-[45%] lg:w-[25%] min-w-[250px]"
-                  />
-                  <RevenueData
-                    metrics={metrics}
-                    className="w-full md:w-[45%] lg:w-[25%] min-w-[250px] flex-shrink-0"
-                    onInsightClick={getAIInsights}
-                  />
-                  <UsersByLocation
-                    data={metrics.activeUsers.countryDistribution}
-                    className="w-full md:w-[45%] lg:w-[25%] min-w-[250px] flex-shrink-0"
-                  />
-                  <UserGrowth
-                    metrics={metrics}
-                    className="w-full md:w-1/2 lg:w-[50%] min-w-[250px] flex-shrink-0"
-                    onInsightClick={getAIInsights}
-                  />
-                  <TopStreams
-                    metrics={metrics}
-                    className="w-full md:w-[45%] lg:w-[48%] order-7"
-                  />
+      <div className="flex relative">
+        <aside className="w-[300px] sticky top-0 h-screen bg-cyan-800 flex-shrink-0 lg:block hidden">
+          side nav
+        </aside>
 
-                  <section className="w-full text-white cardBg order-7">
-                    <div className="px-4 pt-4">
-                      <h2>Recent Streamed Songs</h2>
-                    </div>
-                    {recentStreamedSongsTable}
-                  </section>
-                </>
-              </BlurFade>
-              <BlurFade delay={BLUR_FADE_DELAY} inView>
-                <p className="text-sm w-full text-center mt-8 pb-4 text-gray-200">
-                  Copyright © 2024. Streamify
-                </p>
-              </BlurFade>
-            </>
-          ) : (
-            <Loader className="h-screen" />
-          )}
-        </div>
+        <ScrollArea className="min-h-screen h-[100vh] w-full lg:w-[calc(100vw-300px)] bg-primary-gradient pl-2 md:pl-3 py-2 pr-4 ">
+          <div className="">
+            {metrics ? (
+              <>
+                <Header />
+                <BlurFade
+                  delay={BLUR_FADE_DELAY}
+                  className="flex flex-wrap gap-x-2 gap-y-3 mb-5 justify-between"
+                >
+                  <>
+                    <TopArtist
+                      keyMetrics={metrics.keyMetrics}
+                      className="w-full h-[300px] md:h-auto md:w-[30%] lg:w-[20%]"
+                    />
+                    <KeyMetrics
+                      metrics={metrics}
+                      className="w-full md:w-[45%] lg:w-[25%] min-w-[250px]"
+                    />
+                    <RevenueData
+                      metrics={metrics}
+                      className="w-full md:w-[45%] lg:w-[25%] min-w-[250px] flex-shrink-0"
+                      onInsightClick={getAIInsights}
+                    />
+                    <UsersByLocation
+                      data={metrics.activeUsers.countryDistribution}
+                      className="w-full md:w-[45%] lg:w-[25%] min-w-[250px] flex-shrink-0"
+                    />
+                    <UserGrowth
+                      metrics={metrics}
+                      className="w-full md:w-1/2 lg:w-[50%] min-w-[250px] flex-shrink-0"
+                      onInsightClick={getAIInsights}
+                    />
+                    <TopStreams
+                      metrics={metrics}
+                      className="w-full md:w-[45%] lg:w-[48%] order-7"
+                    />
 
-        <InsightsSheet
-          openInsights={openInsights}
-          setOpenInsights={setOpenInsights}
-          insights={insights}
-          error={error}
-          insightsLoading={insightsLoading}
-        />
-      </ScrollArea>
+                    <section className="w-full text-white cardBg order-7">
+                      <div className="px-4 pt-4">
+                        <h2>Recent Streamed Songs</h2>
+                      </div>
+                      {recentStreamedSongsTable}
+                    </section>
+                  </>
+                </BlurFade>
+                <BlurFade delay={BLUR_FADE_DELAY} inView>
+                  <p className="text-sm w-full text-center mt-8 pb-4 text-gray-200">
+                    Copyright © 2024. Streamify
+                  </p>
+                </BlurFade>
+              </>
+            ) : (
+              <Loader className="h-screen" />
+            )}
+          </div>
+
+          <InsightsSheet
+            openInsights={openInsights}
+            setOpenInsights={setOpenInsights}
+            insights={insights}
+            error={error}
+            insightsLoading={insightsLoading}
+          />
+        </ScrollArea>
+      </div>
     </>
   );
 }
