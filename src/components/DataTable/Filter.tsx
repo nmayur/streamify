@@ -57,7 +57,7 @@ export function Filter<TData, TValue>({
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <button className="flex items-center text-sm border-2 rounded-md border-slate-700 px-3 py-1 mr-3">
+        <button className="flex items-center text-sm border-2 whitespace-nowrap rounded-md border-slate-700 px-3 py-1 mr-3">
           <ListFilter size={16} className="mr-2" />
           Filter by {title}
           {selectedValues.size > 0 && (

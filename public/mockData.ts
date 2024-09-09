@@ -7,7 +7,8 @@ export const metricsData = {
     topArtist: "Taylor Swift",
     topGenre: "Pop",
     topAlbum: "1989",
-    albumCover: "https://www.udiscovermusic.com/wp-content/uploads/2023/08/1989-Taylors-Version.jpg",
+    albumCover:
+      "https://www.udiscovermusic.com/wp-content/uploads/2023/08/1989-Taylors-Version.jpg",
   },
   userGrowth: [
     { month: "January", totalUsers: 700000, activeUsers: 680000 },
@@ -47,7 +48,7 @@ export const metricsData = {
       { label: "UK", users: 40000 },
       { label: "India", users: 50000 },
       { label: "Canada", users: 20000 },
-      { label: "Australia", users: 10000 }
+      { label: "Australia", users: 10000 },
     ],
   },
   genreData: {
@@ -85,6 +86,7 @@ export const recentStreams = [
     streamCount: 5000,
     userId: "user_101",
     topLocations: ["USA", "India", "UK"],
+    dateJoined: "2024-07-25",
   },
   {
     songName: "Levitating",
@@ -93,6 +95,7 @@ export const recentStreams = [
     streamCount: 4500,
     userId: "user_102",
     topLocations: ["Canada", "Australia", "UK"],
+    dateJoined: "2024-06-12",
   },
   {
     songName: "drivers license",
@@ -101,6 +104,7 @@ export const recentStreams = [
     streamCount: 4300,
     userId: "user_103",
     topLocations: ["India", "USA", "Germany"],
+    dateJoined: "2024-08-29",
   },
   {
     songName: "Bad Habits",
@@ -109,6 +113,7 @@ export const recentStreams = [
     streamCount: 3900,
     userId: "user_104",
     topLocations: ["UK", "USA", "Canada"],
+    dateJoined: "2024-09-02",
   },
   {
     songName: "Save Your Tears",
@@ -117,6 +122,7 @@ export const recentStreams = [
     streamCount: 3700,
     userId: "user_105",
     topLocations: ["Australia", "India", "UK"],
+    dateJoined: "2024-08-29",
   },
   {
     songName: "Peaches",
@@ -125,6 +131,7 @@ export const recentStreams = [
     streamCount: 3600,
     userId: "user_106",
     topLocations: ["USA", "Canada", "UK"],
+    dateJoined: "2024-08-09",
   },
   {
     songName: "Stay",
@@ -133,6 +140,7 @@ export const recentStreams = [
     streamCount: 4100,
     userId: "user_107",
     topLocations: ["Australia", "Germany", "USA"],
+    dateJoined: "2024-07-14",
   },
   {
     songName: "Kiss Me More",
@@ -141,6 +149,7 @@ export const recentStreams = [
     streamCount: 3500,
     userId: "user_108",
     topLocations: ["UK", "USA", "France"],
+    dateJoined: "2024-08-07",
   },
   {
     songName: "Montero (Call Me By Your Name)",
@@ -149,6 +158,7 @@ export const recentStreams = [
     streamCount: 4200,
     userId: "user_109",
     topLocations: ["USA", "Brazil", "UK"],
+    dateJoined: "2024-08-20",
   },
   {
     songName: "Good 4 U",
@@ -157,6 +167,7 @@ export const recentStreams = [
     streamCount: 4400,
     userId: "user_110",
     topLocations: ["India", "USA", "Australia"],
+    dateJoined: "2024-08-10",
   },
   {
     songName: "Shivers",
@@ -165,6 +176,7 @@ export const recentStreams = [
     streamCount: 3800,
     userId: "user_111",
     topLocations: ["UK", "Canada", "USA"],
+    dateJoined: "2024-09-05",
   },
   {
     songName: "Take My Breath",
@@ -173,6 +185,7 @@ export const recentStreams = [
     streamCount: 4100,
     userId: "user_112",
     topLocations: ["USA", "India", "Brazil"],
+    dateJoined: "2024-07-01",
   },
   {
     songName: "Deja Vu",
@@ -181,6 +194,7 @@ export const recentStreams = [
     streamCount: 3200,
     userId: "user_113",
     topLocations: ["Germany", "USA", "India"],
+    dateJoined: "2024-06-13",
   },
   {
     songName: "Afterglow",
@@ -189,6 +203,7 @@ export const recentStreams = [
     streamCount: 3000,
     userId: "user_114",
     topLocations: ["Australia", "USA", "Canada"],
+    dateJoined: "2024-07-29",
   },
   {
     songName: "Heartless",
@@ -197,6 +212,7 @@ export const recentStreams = [
     streamCount: 2900,
     userId: "user_115",
     topLocations: ["UK", "India", "USA"],
+    dateJoined: "2024-06-29",
   },
 ];
 
