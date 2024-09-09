@@ -124,7 +124,7 @@ export default function Home() {
                 <>
                   <TopArtist
                     keyMetrics={metrics.keyMetrics}
-                    className="md:w-[30%] lg:w-[20%]"
+                    className="w-full h-[300px] md:h-auto md:w-[30%] lg:w-[20%]"
                   />
                   <KeyMetrics
                     metrics={metrics}
