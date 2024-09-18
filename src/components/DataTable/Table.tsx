@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, useCallback } from "react";
 import { addDays, format } from "date-fns";
 import { Button } from "@/components/ui/button";
 import {
@@ -33,7 +33,6 @@ import { Calendar } from "../ui/calendar";
 import { DateAfter, DateRange } from "react-day-picker";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: RecentStreams[];
@@ -132,40 +131,31 @@ export function DataTable<TData, TValue>({
     return { today, pastDate };
   };
 
-  const filterDataByDateJoined = (range: any) => {
-    // if no date range, set back OG table data along with other filters
-    if (!range) {
-      setTableData(data);
-      return;
+  const filterDataByDateJoined = useCallback((range: string | null, data: any[], customDateRange?: DateRange) => {
+    if (!range) return data;
+
+    if (range === "custom" && customDateRange?.from && customDateRange?.to) {
+      return data.filter((item) => {
+        const dateJoined = new Date(item.dateJoined);
+        return dateJoined >= (customDateRange.from ?? new Date(0)) && dateJoined <= (customDateRange.to ?? new Date());
+      });
     }
 
-    if (range === "custom") {
-      if (customDateRange?.from && customDateRange?.to) {
-        const filteredData = data.filter((item: any) => {
-          const dateJoined = new Date(item.dateJoined);
-          // @ts-ignore
-          return (
-            dateJoined >= (customDateRange as any).from &&
-            dateJoined <= (customDateRange as any).to
-          );
-        });
-        setTableData(filteredData);
-      }
-    } else {
-      // if date range filter and set the data
+    if (range !== "custom") {
       const { pastDate, today } = getSelectedDateRange(range);
-      const filteredData = data.filter((item: any) => {
+      return data.filter((item) => {
         const dateJoined = new Date(item.dateJoined);
         return dateJoined >= pastDate && dateJoined <= today;
       });
-
-      setTableData(filteredData);
     }
-  };
+
+    return data;
+  }, []);
 
   useEffect(() => {
-    filterDataByDateJoined(selectedDateRange);
-  }, [selectedDateRange, customDateRange, columnFilters, globalFilter]);
+    const filteredData = filterDataByDateJoined(selectedDateRange, data, customDateRange);
+    setTableData(filteredData);
+  }, [selectedDateRange, customDateRange, data, filterDataByDateJoined]);
 
   return (
     <div className="overflow-hidden">
